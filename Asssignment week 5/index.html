@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathfinder AI Tracker - Smart Tracking Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="particles">
+        <div class="particle" style="--move-x: 100px; --move-y: -150px;"></div>
+        <div class="particle" style="--move-x: -150px; --move-y: -120px;"></div>
+        <div class="particle" style="--move-x: 200px; --move-y: 140px;"></div>
+        <div class="particle" style="--move-x: -120px; --move-y: 180px;"></div>
+        <div class="particle" style="--move-x: 180px; --move-y: -100px;"></div>
+        <div class="particle" style="--move-x: -90px; --move-y: -200px;"></div>
+        <div class="particle" style="--move-x: 130px; --move-y: 160px;"></div>
+        <div class="particle" style="--move-x: -200px; --move-y: -180px;"></div>
+        <div class="particle" style="--move-x: 150px; --move-y: 200px;"></div>
+        <div class="particle" style="--move-x: -160px; --move-y: 140px;"></div>
+    </div>
+    <div class="scan-lines"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1><i class="fas fa-satellite"></i> Pathfinder AI</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#services"><i class="fas fa-microchip"></i> Services</a></li>
+                <li><a href="#partners"><i class="fas fa-handshake"></i> Partners</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="animated-title">Pathfinder AI Tracking</h1>
+            <p class="hero-subtitle">Quantum-powered security solutions for the future</p>
+            <div class="tech-badge">
+                <span><i class="fas fa-robot"></i> AI-Powered</span>
+                <span><i class="fas fa-network-wired"></i> Quantum-Ready</span>
+                <span><i class="fas fa-shield-alt"></i> Neural Security</span>
+            </div>
+            <a href="#contact" class="cta-button">Initialize System <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <i class="fas fa-car"></i>
+                <h3>Vehicle Tracking</h3>
+                <p style="color: white;">Real-time vehicle monitoring with advanced AI analytics</p>
+                <div class="tech-badge">
+                    <span>AI-Powered</span>
+                    <span>Real-time</span>
+                    <span>GPS</span>
+                </div>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-home"></i>
+                <h3>Property Security</h3>
+                <p style="color: white;">Smart home and business surveillance systems</p>
+                <div class="tech-badge">
+                    <span>Smart AI</span>
+                    <span>24/7</span>
+                    <span>HD Cameras</span>
+                </div>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-store"></i>
+                <h3>Business Monitoring</h3>
+                <p style="color: white;">Comprehensive store security and tracking solutions</p>
+                <div class="tech-badge">
+                    <span>Analytics</span>
+                    <span>Automation</span>
+                    <span>Cloud</span>
+                </div>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Alarm Systems</h3>
+                <p style="color: white;">Advanced intrusion detection and alert systems</p>
+                <div class="tech-badge">
+                    <span>Smart Alerts</span>
+                    <span>Instant</span>
+                    <span>Secure</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="how-it-works">
+        <h2>How Pathfinder AI Works</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-car-side"></i>
+                <h3>Vehicle Tracking</h3>
+                <ul>
+                    <li>Real-time GPS tracking with AI-powered route optimization</li>
+                    <li>Geofencing and speed monitoring</li>
+                    <li>Instant theft alerts and recovery assistance</li>
+                    <li>Driver behavior analysis and reporting</li>
+                    <li>Integration with Cartrack and Netstar systems</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-home"></i>
+                <h3>Property Security</h3>
+                <ul>
+                    <li>Smart camera surveillance with AI motion detection</li>
+                    <li>24/7 monitoring and instant alerts</li>
+                    <li>Remote access and control via mobile app</li>
+                    <li>Integration with existing alarm systems</li>
+                    <li>Automated police dispatch in emergencies</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-store"></i>
+                <h3>Business Monitoring</h3>
+                <ul>
+                    <li>Comprehensive security system integration</li>
+                    <li>AI-powered threat detection</li>
+                    <li>Employee access control and monitoring</li>
+                    <li>Inventory tracking and loss prevention</li>
+                    <li>Automated incident reporting</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="integration" class="integration">
+        <h2>Partner Integration</h2>
+        <div class="integration-content">
+            <div class="integration-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Device Setup</h3>
+                    <p>Install our tracking devices, cameras, and sensors at your location</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>System Connection</h3>
+                    <p>Connect devices to our secure cloud platform via encrypted channels</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Partner Integration</h3>
+                    <p>Seamlessly integrate with Cartrack, Netstar, and Matrix systems</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Monitoring Setup</h3>
+                    <p>Configure monitoring preferences and alert thresholds</p>
+                </div>
+            </div>
+            <div class="integration-partners">
+                <h3>Our Integration Partners</h3>
+                <div class="partner-logos">
+                    <div class="partner">
+                        <img src="image/Security system integration.png" alt="Matrix Logo" width="300px" height="300px">
+                        <p>Security system integration</p>
+                    </div>
+                    <div class="partner">
+                        <img src="image/Advanced vehicle tracking integration.jpg" alt="Cartrack Logo" width="300px" height="300px">
+                        <p>Advanced vehicle tracking integration</p>
+                    </div>
+                    <div class="partner">
+                        <img src="image/Comprehensive fleet management.webp" alt="Netstar Logo" width="300px" height="300px">
+                        <p>Comprehensive fleet management</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <h2>Pricing Plans</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Vehicle Tracking</h3>
+                <div class="price">
+                    <span class="amount" style="color: white;">R299</span>
+                    <span class="period" style="color: white;">/month</span>
+                </div>
+                <ul>
+                    <li>Basic GPS tracking</li>
+                    <li>Mobile app access</li>
+                    <li>Basic alerts</li>
+                    <li>24/7 support</li>
+                </ul>
+                <a href="#contact" class="cta-button">Get Started</a>
+            </div>
+            <div class="pricing-card featured">
+                <h3>Property Security</h3>
+                <div class="price">
+                    <span class="amount" style="color: white;">R499</span>
+                    <span class="period" style="color: white;">/month</span>
+                </div>
+                <ul>
+                    <li>2 cameras included</li>
+                    <li>AI motion detection</li>
+                    <li>Smart alerts</li>
+                    <li>Police dispatch</li>
+                </ul>
+                <a href="#contact" class="cta-button">Get Started</a>
+            </div>
+            <div class="pricing-card">
+                <h3>Business Package</h3>
+                <div class="price">
+                    <span class="amount" style="color: white;">R899</span>
+                    <span class="period" style="color: white;">/month</span>
+                </div>
+                <ul>
+                    <li>4 cameras included</li>
+                    <li>Advanced AI analytics</li>
+                    <li>Employee monitoring</li>
+                    <li>Priority support</li>
+                </ul>
+                <a href="#contact" class="cta-button">Get Started</a>
+            </div>
+        </div>
+        <div class="annual-discount">
+            <p>Save 20% with annual billing! Contact us for custom enterprise solutions.</p>
+        </div>
+    </section>
+    <section id="partners" class="partners">
+        <h2>Our Trusted Partners</h2>
+        <div class="partner-logos">
+            <div class="partner">
+                <img src="image/Cartrack 2.png" alt="Cartrack Logo" width="200px" height="200px">
+                <h3>Cartrack</h3>
+            </div>
+            <div class="partner">
+                <img src="image/matrix-new-logo-300x300@2x.jpg" alt="Matrix Logo" width="200px" height="200px">
+                <h3>Matrix</h3>
+            </div>
+            <div class="partner">
+                <img src="image/images.png" alt="Netstar Logo" width="200px" height="200px">
+                <h3>Netstar</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="team">
+        <h2>Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="image/John Smith.png" alt="CEO" width="150px" height="150px" style="object-fit: cover;">
+                </div>
+                <h3 style="color: white;">John Smith</h3>
+                <p class="role" style="color: white;">Chief Executive Officer</p>
+                <div class="contact-info" style="color: white;">
+                    <p style="color: white;"><i class="fas fa-envelope"></i> john.smith@pathfinderai.co.za</p>
+                    <p style="color: white;"><i class="fas fa-phone"></i> +27 11 123 4567</p>
+                    <p style="color: white;"><i class="fas fa-map-marker-alt"></i> 456 Tech Park, Rosebank, Johannesburg</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="image/Sarah Johnson.png" alt="CTO" width="150px" height="150px" style="object-fit: cover;">
+                </div>
+                <h3 style="color: white;">Sarah Johnson</h3>
+                <p class="role" style="color: white;">Chief Technology Officer</p>
+                <div class="contact-info" style="color: white;">
+                    <p style="color: white;"><i class="fas fa-envelope"></i> sarah.johnson@pathfinderai.co.za</p>
+                    <p style="color: white;"><i class="fas fa-phone"></i> +27 11 234 5678</p>
+                    <p style="color: white;"><i class="fas fa-map-marker-alt"></i> 456 Tech Park, Rosebank, Johannesburg</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="image/Michael Brown.png" alt="Security Head" width="150px" height="150px" style="object-fit: cover;">
+                </div>
+                <h3 style="color: white;">Michael Brown</h3>
+                <p class="role" style="color: white;">Head of Security Operations</p>
+                <div class="contact-info" style="color: white;">
+                    <p style="color: white;"><i class="fas fa-envelope"></i> michael.brown@pathfinderai.co.za</p>
+                    <p style="color: white;"><i class="fas fa-phone"></i> +27 11 345 6789</p>
+                    <p style="color: white;"><i class="fas fa-map-marker-alt"></i> 456 Tech Park, Rosebank, Johannesburg</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="image/Lisa Williams.png" alt="Support Head" width="150px" height="150px" style="object-fit: cover;">
+                </div>
+                <h3 style="color: white;">Lisa Williams</h3>
+                <p class="role" style="color: white;">Head of Customer Support</p>
+                <div class="contact-info" style="color: white;">
+                    <p style="color: white;"><i class="fas fa-envelope"></i> lisa.williams@pathfinderai.co.za</p>
+                    <p style="color: white;"><i class="fas fa-phone"></i> +27 11 456 7890</p>
+                    <p style="color: white;"><i class="fas fa-map-marker-alt"></i> 456 Tech Park, Rosebank, Johannesburg</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="image/David Wilson.png" alt="Partnerships" width="150px" height="150px" style="object-fit: cover;">
+                </div>
+                <h3 style="color: white;">David Wilson</h3>
+                <p class="role" style="color: white;">Head of Partner Relations</p>
+                <div class="contact-info" style="color: white;">
+                    <p style="color: white;"><i class="fas fa-envelope"></i> david.wilson@pathfinderai.co.za</p>
+                    <p style="color: white;"><i class="fas fa-phone"></i> +27 11 567 8901</p>
+                    <p style="color: white;"><i class="fas fa-map-marker-alt"></i> 456 Tech Park, Rosebank, Johannesburg</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <form class="contact-form">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="tel" placeholder="Phone">
+                <select required aria-label="Select Service">
+                    <option value="">Select Service</option>
+                    <option value="vehicle">Vehicle Tracking</option>
+                    <option value="property">Property Security</option>
+                    <option value="business">Business Monitoring</option>
+                    <option value="alarm">Alarm Systems</option>
+                </select>
+                <textarea placeholder="Message" required></textarea>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="security" class="security">
+        <h2>Advanced Security Features</h2>
+        <div class="security-grid">
+            <div class="security-feature">
+                <div class="feature-icon">
+                    <i class="fas fa-fingerprint"></i>
+                </div>
+                <h3>Biometric Authentication</h3>
+                <div class="feature-details">
+                    <ul>
+                        <li>Fingerprint recognition for quick access</li>
+                        <li>Advanced face recognition technology</li>
+                        <li>Multi-factor authentication support</li>
+                        <li>Secure biometric data storage</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="security-feature">
+                <div class="feature-icon">
+                    <i class="fas fa-microphone"></i>
+                </div>
+                <h3>Voice Authentication</h3>
+                <div class="feature-details">
+                    <ul>
+                        <li>Voice pattern recognition</li>
+                        <li>Multi-language support</li>
+                        <li>Background noise filtering</li>
+                        <li>Emergency voice commands</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="security-feature">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Security Questions</h3>
+                <div class="feature-details">
+                    <ul>
+                        <li>Customizable security questions</li>
+                        <li>Dynamic question rotation</li>
+                        <li>Time-based access control</li>
+                        <li>Location-based verification</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="security-feature">
+                <div class="feature-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h3>Advanced Encryption</h3>
+                <div class="feature-details">
+                    <ul>
+                        <li>End-to-end encryption</li>
+                        <li>Military-grade security protocols</li>
+                        <li>Real-time threat detection</li>
+                        <li>Automated security updates</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="security-info">
+            <h3>How Our Security System Works</h3>
+            <div class="security-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Initial Setup</h4>
+                        <p>Register your biometric data, voice patterns, and security questions</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Authentication Process</h4>
+                        <p>Choose your preferred authentication method or use multi-factor verification</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Access Control</h4>
+                        <p>System verifies your identity and grants appropriate access levels</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Continuous Monitoring</h4>
+                        <p>Real-time security monitoring and automatic threat detection</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="interactive-demo" class="interactive-demo">
+        <h2>Interactive Demo</h2>
+        <div class="demo-container">
+            <div class="demo-card">
+                <h3>Dynamic Text Demo</h3>
+                <p id="dynamic-text">This text will change!</p>
+                <button id="change-text-btn" class="demo-button">Change Text</button>
+            </div>
+            
+            <div class="demo-card">
+                <h3>Style Modification Demo</h3>
+                <div id="style-box" class="style-box">Hover over me!</div>
+                <button id="toggle-style-btn" class="demo-button">Toggle Style</button>
+            </div>
+            
+            <div class="demo-card">
+                <h3>Element Manipulation Demo</h3>
+                <div id="element-container">
+                    <p>Click the button to add/remove elements</p>
+                </div>
+                <button id="toggle-element-btn" class="demo-button">Toggle Element</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reports Section -->
+    <section id="reports" class="reports">
+        <h2>System Reports</h2>
+        <div class="reports-container">
+            <!-- AI Reports -->
+            <div class="report-section">
+                <h3><i class="fas fa-robot"></i> AI Analysis Reports</h3>
+                <div class="report-card">
+                    <div class="report-header">
+                        <span class="report-time"><i class="fas fa-clock"></i> 12:00 PM, 20 Mar 2024</span>
+                        <span class="report-type">Scheduled Report</span>
+                    </div>
+                    <div class="report-content">
+                        <h4>System Performance Analysis</h4>
+                        <ul>
+                            <li>Vehicle tracking accuracy: 99.8%</li>
+                            <li>Security camera uptime: 100%</li>
+                            <li>Response time average: 1.2s</li>
+                            <li>Active monitoring sessions: 247</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="report-card">
+                    <div class="report-header">
+                        <span class="report-time"><i class="fas fa-clock"></i> 00:00 AM, 20 Mar 2024</span>
+                        <span class="report-type">Scheduled Report</span>
+                    </div>
+                    <div class="report-content">
+                        <h4>Network Security Status</h4>
+                        <ul>
+                            <li>Firewall status: Optimal</li>
+                            <li>Threat attempts blocked: 23</li>
+                            <li>System updates: Complete</li>
+                            <li>Backup status: Successfully completed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Incident Reports -->
+            <div class="report-section">
+                <h3><i class="fas fa-exclamation-triangle"></i> Incident Reports</h3>
+                <div class="report-card incident">
+                    <div class="report-header">
+                        <span class="report-time"><i class="fas fa-clock"></i> 15:23 PM, 20 Mar 2024</span>
+                        <span class="report-type urgent">Urgent</span>
+                    </div>
+                    <div class="report-content">
+                        <h4>Suspicious Activity Detected</h4>
+                        <ul>
+                            <li>Location: Warehouse B</li>
+                            <li>Type: Unauthorized access attempt</li>
+                            <li>Status: Security team dispatched</li>
+                            <li>Action taken: Area lockdown initiated</li>
+                        </ul>
+                        <div class="incident-actions">
+                            <button class="action-button"><i class="fas fa-video"></i> View Camera</button>
+                            <button class="action-button"><i class="fas fa-file-export"></i> Export Report</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="report-card incident">
+                    <div class="report-header">
+                        <span class="report-time"><i class="fas fa-clock"></i> 10:45 AM, 20 Mar 2024</span>
+                        <span class="report-type warning">Warning</span>
+                    </div>
+                    <div class="report-content">
+                        <h4>Vehicle Anomaly Detected</h4>
+                        <ul>
+                            <li>Vehicle ID: TRK-2024-089</li>
+                            <li>Issue: Unusual route deviation</li>
+                            <li>Status: Under investigation</li>
+                            <li>Action taken: Driver contacted</li>
+                        </ul>
+                        <div class="incident-actions">
+                            <button class="action-button"><i class="fas fa-map-marked-alt"></i> Track Vehicle</button>
+                            <button class="action-button"><i class="fas fa-file-export"></i> Export Report</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Preview Section -->
+    <section id="app-preview" class="app-preview">
+        <div class="preview-container">
+            <div class="preview-image">
+                <img src="image/Pathfinder ai preview 1 (1).png" alt="Pathfinder AI Interface" class="app-screenshot">
+                <div class="preview-overlay">
+                    <div class="preview-badge">
+                        <i class="fas fa-star"></i>
+                        <span>4.8/5.0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="preview-content" style="color: white;">
+                <h2>Pathfinder AI Tracker App</h2>
+                <div class="app-specs">
+                    <div class="spec-item">
+                        <i class="fas fa-download"></i>
+                        <span>Size: 84MB</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Version: 2.4.1</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-microchip"></i>
+                        <span>Requires Android 8.0+ / iOS 13.0+</span>
+                    </div>
+                </div>
+                <div class="app-features">
+                    <h3>Key Features</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-brain"></i> Neural Network Processing</li>
+                        <li><i class="fas fa-shield-alt"></i> Military-Grade Encryption</li>
+                        <li><i class="fas fa-map-marked-alt"></i> Real-time GPS Tracking</li>
+                        <li><i class="fas fa-chart-line"></i> Predictive Analytics</li>
+                        <li><i class="fas fa-bell"></i> Instant Alert System</li>
+                    </ul>
+                </div>
+                <div class="download-buttons">
+                    <a href="#" class="store-button">
+                        <i class="fab fa-google-play"></i>
+                        <span>
+                            Get it on<br>
+                            <strong>Google Play</strong>
+                        </span>
+                    </a>
+                    <a href="#" class="store-button">
+                        <i class="fab fa-apple"></i>
+                        <span>
+                            Download on<br>
+                            <strong>App Store</strong>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Pathfinder AI Tracker</h3>
+                <p>Advanced tracking solutions for your security needs</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#partners">Partners</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-phone"></i> +27 123 456 789</p>
+                <p><i class="fas fa-envelope"></i> info@pathfinderai.co.za</p>
+                <p><i class="fas fa-map-marker-alt"></i> Johannesburg, South Africa</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Pathfinder AI Tracker. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+    
